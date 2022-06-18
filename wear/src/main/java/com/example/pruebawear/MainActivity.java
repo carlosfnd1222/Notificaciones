@@ -89,12 +89,16 @@ public class MainActivity extends Activity {
                         intent,
                         PendingIntent.FLAG_UPDATE_CURRENT);
 
+
                 notification = new NotificationCompat.Builder(MainActivity.this, idChannel)
                         .setSmallIcon(R.mipmap.ic_launcher)
-                        .setContentTitle("Buzón de voz")
-                        .setContentText("Carlos Soto dejo un mensaje en el buzón")
+                        .setContentTitle("WhatsApp")
+                        .setContentText("Llamame porfavor")
                         .setContentIntent(pendingIntent)
-                        .addAction(R.drawable.llamada, "Llamar", DialPendingIntent)
+                        .addAction(
+                                R.mipmap.ic_launcher,
+                                "Llamar",
+                                DialPendingIntent)
                         .setAutoCancel(true);
 
                 nm.notify(idNotification, notification.build());
